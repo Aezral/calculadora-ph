@@ -14,7 +14,6 @@ function notacion(num){
         var numero = num.substring(num.indexOf('e+')+2, num.length)
         num = num.substring(0, num.indexOf('e+') +2)
         num = num.replace('e+', 'x10' + '⁺' + tosup(numero))
-        console.log(num)
         return num;
     } else if(num[num.indexOf("e")+1] == '-') {
         var numero = num.substring(num.indexOf('e-')+2, num.length)
@@ -23,7 +22,6 @@ function notacion(num){
         return num;
     }
 }
-notacion(1.153123e+7)
 objeto('calcular').onclick = function(){
 
     var PH = objeto('PH').value
