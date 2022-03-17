@@ -5,10 +5,33 @@ body {
     background-attachment:fixed;
 }
 
-input {
+.form-control{
     transition: 250ms
   }
-input:hover{
+  .form-control:hover{
     transition: 250ms;
     border: solid 1px rgb(147, 147, 202);
+    transform: scale(1.03);
+}
+
+.btn {
+  transition: 250ms;
+}
+.btn:hover {
+  transition: 250ms;
+  transform: translateY(-3px);
+
+}
+@keyframes slideInFromUp {
+  0% {
+    transform: translateY(30%);
   }
+  100%{
+    transform: translateY(0);
+  }
+}
+
+.card{
+  animation: 1s ease-out 0s 1 slideInFromUp;
+}
+

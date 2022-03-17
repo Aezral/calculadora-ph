@@ -2,6 +2,28 @@ function objeto(id) {
     return document.getElementById(id)
 }
 
+function notacion(num){
+    function tosup(num){
+        num = String(num)
+        num = num.replace('0','⁰').replace('1','¹').replace('2', '²').replace('3', '³').replace('4', '⁴').replace('5', '⁵').replace('6', '⁶').replace('7', '⁷').replace('8', '⁸').replace('9', '⁹')
+        return num;
+    }
+    num = num.toExponential(3);
+    num.replace(' ', '')
+    if(num[num.indexOf("e")+1] == '+'){
+        var numero = num.substring(num.indexOf('e+')+2, num.length)
+        num = num.substring(0, num.indexOf('e+') +2)
+        num = num.replace('e+', 'x10' + '⁺' + tosup(numero))
+        console.log(num)
+        return num;
+    } else if(num[num.indexOf("e")+1] == '-') {
+        var numero = num.substring(num.indexOf('e-')+2, num.length)
+        num = num.substring(0, num.indexOf('e-') +2)
+        num = num.replace('e-', 'x10' + '⁻' + tosup(numero))
+        return num;
+    }
+}
+notacion(1.153123e+7)
 objeto('calcular').onclick = function(){
 
     var PH = objeto('PH').value
@@ -22,10 +44,11 @@ objeto('calcular').onclick = function(){
             } else if(PH > 7){
                 var tipo = 'Alcalino'
             }
-            objeto('POH').value = POH
-            objeto('Hplus').value = Hplus.toExponential();
-            objeto('OHless').value = OHless.toExponential();
+            objeto('POH').value = POH.toFixed(2);
+            objeto('Hplus').value = notacion(Hplus)
+            objeto('OHless').value = notacion(OHless)
             objeto('Tipo').value = tipo
+            
             
             objeto('PH').setAttribute('disabled', 'true')
             objeto('POH').setAttribute('disabled', 'true')
@@ -51,9 +74,9 @@ objeto('calcular').onclick = function(){
             } else if(PH > 7){
                 var tipo = 'Alcalino'
             }
-            objeto('PH').value = PH
-            objeto('Hplus').value = Hplus.toExponential();
-            objeto('OHless').value = OHless.toExponential();
+            objeto('PH').value = PH.toFixed(2);
+            objeto('Hplus').value = notacion(Hplus)
+            objeto('OHless').value = notacion(OHless)
             objeto('Tipo').value = tipo
     
             objeto('PH').setAttribute('disabled', 'true')
@@ -77,9 +100,9 @@ objeto('calcular').onclick = function(){
             } else if(PH > 7){
                 var tipo = 'Alcalino'
             }
-            objeto('POH').value = POH
-            objeto('PH').value = PH
-            objeto('OHless').value = OHless.toExponential();
+            objeto('POH').value = POH.toFixed(2);
+            objeto('PH').value = PH.toFixed(2);
+            objeto('OHless').value = notacion(OHless)
             objeto('Tipo').value = tipo
     
             objeto('PH').setAttribute('disabled', 'true')
@@ -103,9 +126,9 @@ objeto('calcular').onclick = function(){
             } else if(PH > 7){
                 var tipo = 'Alcalino'
             }
-            objeto('POH').value = POH
-            objeto('PH').value = PH
-            objeto('Hplus').value = Hplus.toExponential();
+            objeto('POH').value = POH.toFixed(2);
+            objeto('PH').value = PH.toFixed(2);
+            objeto('Hplus').value = notacion(Hplus)
             objeto('Tipo').value = tipo
     
             objeto('PH').setAttribute('disabled', 'true')
@@ -137,3 +160,4 @@ objeto('reiniciar').onclick = function(){
     objeto('calcular').classList.remove('disabled');
     objeto('reiniciar').classList.add('disabled');
 }
+
