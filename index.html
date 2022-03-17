@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="icon"
+        href="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/Circle-icons-water.svg/2048px-Circle-icons-water.svg.png" />
+    <title>Calculadora PH</title>
+    <meta name="description" content="Calcula el PH, POH, entre otros." />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous" />
+    <link rel="stylesheet" href="main.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+</head>
+
+<body>
+    <div class="card mx-auto mt-5" style="width: 18rem;">
+        <div class="card-body">
+            <h5 class="card-title">Calculadora de pH <i class="bi bi-droplet-half"></i></h5>
+            <p class="text-muted">Hecho por Aezral.</p>
+            <label for="PH" class="form-label mt-3">PH</label>
+            <input class="form-control" id="PH" placeholder="Ej. 7">>
+            <label for="POH" class="form-label mt-3">POH</label>
+            <input class="form-control" id="POH" placeholder="Ej. 7">
+            <label for="Hplus" class="form-label mt-3">[ H+ ]</label>
+            <input class="form-control" id="Hplus" placeholder="Ej. 1e-7">
+            <label for="OHless" class="form-label mt-3" >[ OH- ]</label>
+            <input class="form-control" id="OHless"placeholder="Ej. 1e-7">
+            <label for="Tipo" class="form-label mt-3">Tipo</label>
+            <input class="form-control" id="Tipo" disabled>
+            <a id="calcular" class="btn btn-primary mt-3">Calcular</a>
+            <a id="reiniciar" class="btn btn-primary mt-3 disabled">Reiniciar</a>
+            <p class="text-muted mt-3">1e+10 = 1 x 10¹⁰</p>
+        </div>
+    </div>
+</body>
+<script src="main.js" defer></script>
+
+</html>
