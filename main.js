@@ -5,7 +5,7 @@ function objeto(id) {
 function notacion(num) {
     function tosup(num) {
         num = String(num)
-        num = num.replace('0', '⁰').replace('1', '¹').replace('2', '²').replace('3', '³').replace('4', '⁴').replace('5', '⁵').replace('6', '⁶').replace('7', '⁷').replace('8', '⁸').replace('9', '⁹')
+        num = num.replaceAll('0', '⁰').replaceAll('1', '¹').replaceAll('2', '²').replaceAll('3', '³').replaceAll('4', '⁴').replaceAll('5', '⁵').replaceAll('6', '⁶').replaceAll('7', '⁷').replaceAll('8', '⁸').replaceAll('9', '⁹')
         return num;
     }
     num = num.toExponential(3);
@@ -42,6 +42,7 @@ function update(PH) {
         objeto('PH').value = PH.toFixed(2);
         objeto('POH').value = POH.toFixed(2);
         objeto('Hplus').value = notacion(Hplus)
+        console.log(OHless)
         objeto('OHless').value = notacion(OHless)
         objeto('Tipo').value = tipo
 
